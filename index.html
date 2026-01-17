@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guilherme Sopran | Personal Trainer (São José do Cedro)</title>
+  <meta name="description" content="Personal Trainer em São José do Cedro. Treino para atletas e hipertrofia. Personal presencial e Mentoria online. Fale direto no WhatsApp." />
+  <style>
+    :root{
+      --bg:#070b0a;
+      --card:#0d1412;
+      --muted:#a8b3ad;
+      --text:#eaf3ef;
+      --green:#21d07a;
+      --green2:#0ea85f;
+      --line:rgba(255,255,255,.08);
+      --shadow: 0 10px 30px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1000px 600px at 20% -10%, rgba(33,208,122,.22), transparent 55%),
+        radial-gradient(900px 500px at 90% 0%, rgba(14,168,95,.18), transparent 55%),
+        linear-gradient(180deg, #050807, var(--bg));
+      line-height:1.45;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:22px}
+    .nav{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(7,11,10,.55);
+      border-bottom:1px solid var(--line);
+    }
+    .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.4px}
+    .logo{
+      width:36px;height:36px;border-radius:10px;
+      background: linear-gradient(135deg, rgba(33,208,122,.95), rgba(14,168,95,.65));
+      box-shadow: 0 10px 25px rgba(33,208,122,.18);
+      display:grid;place-items:center;color:#062014;font-weight:900;
+    }
+    .menu{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end}
+    .menu a{padding:10px 12px;border-radius:12px;color:var(--muted);border:1px solid transparent;}
+    .menu a:hover{color:var(--text);border-color:var(--line);background:rgba(255,255,255,.03)}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 16px;border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      box-shadow: var(--shadow);
+      font-weight:800;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btnPrimary{
+      border-color: rgba(33,208,122,.35);
+      background: linear-gradient(135deg, rgba(33,208,122,.92), rgba(14,168,95,.70));
+      color:#061c12;
+      box-shadow: 0 18px 40px rgba(14,168,95,.22);
+    }
+    .hero{padding:34px 0 18px;}
+    .gridHero{
+      display:grid;grid-template-columns: 1.15fr .85fr;
+      gap:22px;align-items:stretch;
+    }
+    @media (max-width: 920px){
+      .gridHero{grid-template-columns:1fr}
+      .menu{display:none}
+    }
+    .tag{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border-radius:999px;
+      border:1px solid rgba(33,208,122,.28);
+      background: rgba(33,208,122,.08);
+      color: #bff4dc;
+      font-weight:900;
+      width:fit-content;
+    }
+    h1{
+      font-size: clamp(34px, 4vw, 52px);
+      line-height:1.05;margin:14px 0 12px;letter-spacing:-.6px;
+    }
+    .sub{color:var(--muted);font-size:16.5px;margin:0 0 18px;max-width:62ch;}
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 10px}
+    .mini{color:var(--muted);font-size:13px;display:flex;gap:14px;flex-wrap:wrap;}
+    .mini span{display:inline-flex;align-items:center;gap:8px}
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+      box-shadow: var(--shadow);
+    }
+    .heroCard h3{margin:0 0 10px;font-size:16px;color:#cfeee0}
+    .statGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .stat{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+      background: rgba(0,0,0,.25);
+    }
+    .stat b{display:block;font-size:18px}
+    .stat small{color:var(--muted)}
+    .section{padding:18px 0}
+    .section h2{font-size:24px;margin:0 0 10px;letter-spacing:-.2px;}
+    .section p{color:var(--muted);margin:0 0 14px}
+    .cards3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;}
+    @media (max-width: 920px){ .cards3{grid-template-columns:1fr} }
+    .pill{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:10px 12px;border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--muted);
+      margin:6px 8px 0 0;
+      font-weight:800;
+    }
+    .planHeader{
+      display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px
+    }
+    .price{font-weight:950;color:#bff4dc;letter-spacing:-.2px;}
+    .ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+    .ul li{margin:7px 0}
+    .divider{height:1px;background:var(--line);margin:16px 0}
+    .faq details{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      border-radius:16px;
+      padding:14px 14px;
+      margin:10px 0;
+    }
+    .faq summary{cursor:pointer;font-weight:950;color:#d9f3e6}
+    .footer{
+      padding:26px 0 36px;color:var(--muted);
+      border-top:1px solid var(--line);margin-top:18px;
+    }
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 10px;border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .wbtn{
+      position:fixed; right:18px; bottom:18px; z-index:20;
+      border-radius:999px;
+      padding:14px 16px;
+      background: linear-gradient(135deg, rgba(33,208,122,.95), rgba(14,168,95,.75));
+      color:#061c12;
+      font-weight:950;
+      box-shadow: 0 18px 45px rgba(14,168,95,.25);
+      border:1px solid rgba(33,208,122,.35);
+    }
+    .tiny{font-size:12.5px;color:var(--muted)}
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="wrap">
+      <div class="brand">
+        <div class="logo">GS</div>
+        <div>
+          <div style="font-size:14px;color:var(--muted);font-weight:800">Personal Trainer</div>
+          <div style="font-size:16px;font-weight:950;line-height:1.1">Guilherme Sopran</div>
+        </div>
+      </div>
+
+      <div class="menu">
+        <a href="#sobre">Sobre</a>
+        <a href="#planos">Planos</a>
+        <a href="#pagamento">Pagamento</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a class="btn btnPrimary" id="btnTopWhats" href="#" aria-label="Falar no WhatsApp">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="gridHero">
+        <div>
+          <div class="tag">⚽ Atletas • 💪 Hipertrofia • ⚡ Performance</div>
+          <h1>Treino forte, com método. Pra evoluir de verdade.</h1>
+          <p class="sub">
+            Personal presencial em <b>São José do Cedro</b> e mentoria online pra quem quer resultado com orientação técnica.
+            Sem treino genérico: aqui é execução, progressão e consistência.
+          </p>
+
+          <div class="ctaRow">
+            <a class="btn btnPrimary" id="btnHeroWhats" href="#">📲 Falar no WhatsApp</a>
+            <a class="btn" href="#planos">Ver planos</a>
+            <a class="btn" href="#pagamento">Formas de pagamento</a>
+          </div>
+
+          <div class="mini">
+            <span>✅ Avaliação + metas</span>
+            <span>✅ Periodização e progressão</span>
+            <span>✅ Ajustes e suporte</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="badge">📍 Atendimento: <b style="color:#d9f3e6">São José do Cedro</b></div>
+          <div class="badge" style="margin-left:8px">🕒 Resposta rápida no WhatsApp</div>
+        </div>
+
+        <div class="card heroCard">
+          <h3>Como eu trabalho</h3>
+          <div class="statGrid">
+            <div class="stat">
+              <b>Treino sob medida</b>
+              <small>objetivo, nível e rotina</small>
+            </div>
+            <div class="stat">
+              <b>Técnica</b>
+              <small>correção e execução certa</small>
+            </div>
+            <div class="stat">
+              <b>Progressão</b>
+              <small>força, volume e desempenho</small>
+            </div>
+            <div class="stat">
+              <b>Suporte</b>
+              <small>pra manter o ritmo</small>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <h3>Foco principal</h3>
+          <div>
+            <span class="pill">⚽ Atletas</span>
+            <span class="pill">💪 Hipertrofia</span>
+            <span class="pill">🔥 Condicionamento</span>
+            <span class="pill">🧠 Consistência</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="sobre">
+    <div class="wrap">
+      <h2>Sobre</h2>
+      <p>
+        Meu trabalho é te levar pro próximo nível com treino estruturado e acompanhamento.
+        A ideia é simples: <b>treinar certo, progredir e repetir</b>.
+      </p>
+
+      <div class="cards3">
+        <div class="card">
+          <h3 style="margin:0 0 8px">🎯 Avaliação e direção</h3>
+          <p>Entendo teu objetivo e monto o plano do jeito certo pra tua realidade.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 8px">📈 Progressão real</h3>
+          <p>Treino evolui com estratégia: cargas, volume, técnica e consistência.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 8px">🤝 Acompanhamento</h3>
+          <p>Ajustes e suporte pra não travar no meio do caminho.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="planos">
+    <div class="wrap">
+      <h2>Planos</h2>
+      <p>Escolha o formato e me chama no WhatsApp pra iniciar.</p>
+
+      <div class="cards3">
+        <!-- PERSONAL PRESENCIAL -->
+        <div class="card">
+          <div class="planHeader">
+            <div>
+              <h3 style="margin:0 0 6px">🏋️ Personal Presencial</h3>
+              <div style="color:var(--muted)">São José do Cedro • hora/aula</div>
+            </div>
+            <div class="price">A partir de R$ 40</div>
+          </div>
+
+          <ul class="ul">
+            <li><b>1x/semana:</b> R$ 50,00 a hora/aula</li>
+            <li><b>2x/semana:</b> R$ 45,00 a hora/aula</li>
+            <li><b>3x ou mais:</b> R$ 40,00 a hora/aula</li>
+            <li>Correção técnica + treino direcionado</li>
+            <li>Foco em performance e hipertrofia</li>
+          </ul>
+
+          <div class="divider"></div>
+          <a class="btn btnPrimary" id="btnPlanPresencial" href="#">Quero personal presencial</a>
+          <div class="tiny" style="margin-top:8px">*Valores por hora/aula (conforme frequência semanal).</div>
+        </div>
+
+        <!-- MENTORIA -->
+        <div class="card">
+          <div class="planHeader">
+            <div>
+              <h3 style="margin:0 0 6px">📲 Plano Mentoria (Online)</h3>
+              <div style="color:var(--muted)">Autonomia + orientação técnica</div>
+            </div>
+            <div class="price">R$ 160/mês</div>
+          </div>
+
+          <ul class="ul">
+            <li>Avaliação física inicial (questionário online)</li>
+            <li>Treino personalizado mensal</li>
+            <li>Acesso a vídeos demonstrativos</li>
+            <li>Ajustes quinzenais no treino</li>
+            <li>Feedback por vídeo (1x por mês)</li>
+            <li>Suporte ativo no WhatsApp (respostas rápidas)</li>
+            <li>Acompanhamento de progresso (medidas, fotos, feedback técnico)</li>
+          </ul>
+
+          <div class="divider"></div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <span class="badge"><b style="color:#d9f3e6">Mensal:</b> R$ 160,00</span>
+            <span class="badge"><b style="color:#d9f3e6">Trimestral:</b> R$ 140,00/mês</span>
+            <span class="badge"><b style="color:#d9f3e6">Anual:</b> R$ 125,00/mês</span>
+          </div>
+
+          <div class="divider"></div>
+          <a class="btn btnPrimary" id="btnPlanMentoria" href="#">Quero a Mentoria</a>
+        </div>
+
+        <!-- ATLETAS / PERFORMANCE -->
+        <div class="card">
+          <div class="planHeader">
+            <div>
+              <h3 style="margin:0 0 6px">⚽ Preparação para Atletas</h3>
+              <div style="color:var(--muted)">Força • potência • condicionamento</div>
+            </div>
+            <div class="price">Sob consulta</div>
+          </div>
+
+          <ul class="ul">
+            <li>Plano focado em performance e prevenção</li>
+            <li>Trabalho de força, potência e resistência</li>
+            <li>Estratégia pra temporada e pré-temporada</li>
+            <li>Presencial ou estrutura híbrida</li>
+          </ul>
+
+          <div class="divider"></div>
+          <a class="btn btnPrimary" id="btnPlanAtleta" href="#">Quero preparação de atleta</a>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="card">
+        <h3 style="margin:0 0 6px">📌 Quer que eu te indique o melhor plano?</h3>
+        <p style="margin:0 0 10px;color:var(--muted)">
+          Me chama no WhatsApp e manda: objetivo + rotina + onde treina (academia/casa) + nível (iniciante/intermediário/avançado).
+        </p>
+        <a class="btn btnPrimary" id="btnPlanCustom" href="#">Fazer avaliação no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pagamento">
+    <div class="wrap">
+      <h2>Formas de pagamento</h2>
+      <p>Fechou, pagou, começou. Se preferir, eu te mando o link direto no WhatsApp.</p>
+
+      <div class="cards3">
+        <div class="card">
+          <h3 style="margin:0 0 8px">⚡ Pix</h3>
+          <p>Rápido e prático.</p>
+          <div class="divider"></div>
+          <a class="btn" href="#" id="btnPix">Pedir chave Pix</a>
+        </div>
+
+        <div class="card">
+          <h3 style="margin:0 0 8px">💳 Cartão</h3>
+          <p>Se você quiser parcelar, eu mando o link.</p>
+          <div class="divider"></div>
+          <a class="btn" href="#" id="btnCartao">Pagar no cartão</a>
+        </div>
+
+        <div class="card">
+          <h3 style="margin:0 0 8px">🧾 Link / Checkout</h3>
+          <p>Ideal pra mentoria online (link de pagamento).</p>
+          <div class="divider"></div>
+          <a class="btn" href="#" id="btnCheckout">Receber link</a>
+        </div>
+      </div>
+
+      <p class="tiny" style="margin-top:12px">
+        *Se você tiver links prontos (Mercado Pago / etc.), é só substituir no código que fica automático.
+      </p>
+    </div>
+  </section>
+
+  <section class="section faq" id="duvidas">
+    <div class="wrap">
+      <h2>Dúvidas rápidas</h2>
+      <p>Objetivo, plano e execução. Simples assim.</p>
+
+      <details>
+        <summary>Em quanto tempo eu vejo resultado?</summary>
+        <div style="color:var(--muted);margin-top:8px">
+          Depende da constância (treino + alimentação + sono). Em poucas semanas já dá pra sentir evolução e ver mudanças.
+        </div>
+      </details>
+
+      <details>
+        <summary>Mentoria online funciona mesmo?</summary>
+        <div style="color:var(--muted);margin-top:8px">
+          Funciona quando tem treino personalizado, ajustes e suporte. Você executa, eu corrijo e ajusto o plano.
+        </div>
+      </details>
+
+      <details>
+        <summary>Sou iniciante. Posso começar?</summary>
+        <div style="color:var(--muted);margin-top:8px">
+          Sim. O treino é montado pro seu nível, com foco em técnica e progressão segura.
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap" style="display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center">
+      <div>
+        <div style="font-weight:950;color:#d9f3e6">Guilherme Sopran • Personal Trainer</div>
+        <div>São José do Cedro • © <span id="year"></span></div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn" href="#planos">Planos</a>
+        <a class="btn" href="#pagamento">Pagamento</a>
+        <a class="btn btnPrimary" id="btnFooterWhats" href="#">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wbtn" id="btnFloatWhats" href="#" aria-label="Chamar no WhatsApp">📲 WhatsApp</a>
+  <script>
+  // ========= CONFIGURAÇÕES =========
+  const WHATS_NUMBER = "5549991010112";
+  const DEFAULT_TEXT = "Fala Guilherme! Quero saber mais sobre Personal Presencial e Mentoria.";
+
+  // PIX - Mercado Pago
+  const PIX_KEY = "93bc5d2f-1c0f-439e-8021-7a43d1c010bb";
+
+  // Links opcionais (use se tiver checkout/cartão no futuro)
+  const LINK_CARTAO = "";
+  const LINK_CHECKOUT = "";
+
+  // ========= FUNÇÕES =========
+  function waLink(text){
+    const msg = encodeURIComponent(text || DEFAULT_TEXT);
+    return `https://wa.me/${WHATS_NUMBER}?text=${msg}`;
+  }
+
+  function setHref(id, href){
+    const el = document.getElementById(id);
+    if(el) el.href = href;
+  }
+
+  // ========= WHATSAPP =========
+  const baseWhats = waLink(DEFAULT_TEXT);
+
+  setHref("btnTopWhats", baseWhats);
+  setHref("btnHeroWhats", waLink("Fala Guilherme! Quero começar. Me explica os planos e como funciona o acompanhamento."));
+  setHref("btnFooterWhats", baseWhats);
+  setHref("btnFloatWhats", baseWhats);
+
+  setHref("btnPlanPresencial", waLink("Quero PERSONAL PRESENCIAL. Minha frequência seria: __x/semana. Me passa horários e como funciona."));
+  setHref("btnPlanMentoria", waLink("Quero o PLANO MENTORIA (Online). Me explica o que preciso enviar e como começamos."));
+  setHref("btnPlanAtleta", waLink("Quero PREPARAÇÃO PARA ATLETAS. Modalidade: ____. Objetivo: ____."));
+  setHref("btnPlanCustom", waLink("Quero uma avaliação. Objetivo: ____. Rotina: ____. Onde treino: ____. Nível: ____."));
+
+  // ========= PAGAMENTO =========
+
+  // PIX – copia chave e abre WhatsApp
+  const btnPix = document.getElementById("btnPix");
+  if(btnPix){
+    btnPix.href = "#";
+    btnPix.addEventListener("click", async (e) => {
+      e.preventDefault();
+      try{
+        await navigator.clipboard.writeText(PIX_KEY);
+        alert(
+          "✅ Chave Pix copiada!\n\n" +
+          "Pix (Mercado Pago):\n" +
+          PIX_KEY +
+          "\n\nCole no app do banco e finalize o pagamento."
+        );
+      } catch {
+        alert(
+          "Pix (Mercado Pago):\n" +
+          PIX_KEY +
+          "\n\nCopie manualmente a chave."
+        );
+      }
+      window.open(
+        waLink("Já copiei a chave Pix. Vou realizar o pagamento agora."),
+        "_blank"
+      );
+    });
+  }
+
+  // Cartão
+  setHref(
+    "btnCartao",
+    (LINK_CARTAO && LINK_CARTAO.startsWith("http"))
+      ? LINK_CARTAO
+      : waLink("Quero pagar no CARTÃO. Me manda o link de pagamento.")
+  );
+
+  // Checkout
+  setHref(
+    "btnCheckout",
+    (LINK_CHECKOUT && LINK_CHECKOUT.startsWith("http"))
+      ? LINK_CHECKOUT
+      : waLink("Me manda o LINK/CHECKOUT pra fechar agora.")
+  );
+
+  // ========= EXTRAS =========
+
+  // Ano automático no rodapé
+  const yearEl = document.getElementById("year");
+  if(yearEl){
+    yearEl.textContent = new Date().getFullYear();
+  }
+
+  // Scroll suave
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", e => {
+      const target = document.querySelector(link.getAttribute("href"));
+      if(!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+</script>
+</body>
+</html>
